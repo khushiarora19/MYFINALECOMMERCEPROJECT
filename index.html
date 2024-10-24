@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>E-commerce Platform</title>
+</head>
+<body>
+    <header>
+        <h1>E-commerce Platform</h1>
+        <div id="message"></div>
+    </header>
+    
+    <section>
+        <h2>Filter Products</h2>
+        <label for="filter-category">Category:</label>
+        <select id="filter-category">
+            <option value="">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="fashion">Fashion</option>
+            <option value="home">Home</option>
+        </select>
+
+        <label for="price_max">Max Price:</label>
+        <input type="number" id="price_max">
+
+        <label for="sortBy">Sort By:</label>
+        <select id="sortBy">
+            <option value="relevance">Relevance</option>
+            <option value="price_asc">Price (Low to High)</option>
+            <option value="price_desc">Price (High to Low)</option>
+        </select>
+
+        <label for="page">Page:</label>
+        <input type="number" id="page" value="1" min="1">
+
+        <label for="limit">Limit:</label>
+        <input type="number" id="limit" value="10" min="1">
+
+        <button id="filterButton">Filter Products</button>
+    </section>
+
+    <section id="product-list">
+        <h2>Products</h2>
+        <!-- Product items will be dynamically generated here -->
+    </section>
+
+    <div id="pagination"></div>
+
+    <section>
+        <h2>Add Product</h2>
+        <form id="add-product-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" required></textarea>
+
+            <label for="category">Category:</label>
+            <select id="category">
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Fashion</option>
+                <option value="home">Home</option>
+            </select>
+
+            <label for="stock">Stock:</label>
+            <input type="number" id="stock" required>
+
+            <button type="submit">Add Product</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Place Order</h2>
+        <form id="order-form">
+            <label for="customerName">Customer Name:</label>
+            <input type="text" id="customerName" required>
+
+            <label for="orderProductId">Product ID:</label>
+            <input type="text" id="orderProductId" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" required>
+
+            <button type="submit">Place Order</button>
+        </form>
+        <div id="order-message"></div>
+    </section>
+
+    <section>
+        <h2>Fetch Order Details</h2>
+        <label for="orderId">Order ID:</label>
+        <input type="text" id="orderId" required>
+        <button id="fetch-order-button">Fetch Order</button>
+        <div id="order-details"></div>
+    </section>
+
+    <section id="order-list">
+        <h2>Orders</h2>
+        <!-- Order items will be dynamically generated here -->
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
